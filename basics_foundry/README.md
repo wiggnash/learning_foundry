@@ -1,66 +1,40 @@
-## Foundry
+# Starting with Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+1. Initialise the foundry folder
+   - sometimes it can throw an error , when the folder have some files . then foce init the foundry
 
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+forge init
+forge init -force
 ```
 
-### Test
+## File structure
 
-```shell
-$ forge test
+1. src: All the smart contracts that we want to deploy , main section that we will always work
+2. scripts : we will scripts which will interact with our smart contract
+3. test: we will put code in this folder to test whats there in the src
+4. toml file : file that is going to give us config parameters when we are working with foundry
+
+### Getting Started with the foundry
+
+1. Add a smart contract to the src folder , for this example im adding a SimpleStorage.sol smart contract.
+2. We can now compile the smart contract using foundry
+
+```bash
+forge compile
 ```
 
-### Format
+#### Things to note after compile
 
-```shell
-$ forge fmt
-```
+1. **Out folder** : It will provide all the different information which remix will provide like abi , bytecode etc
+2. **Cache Folder** : We can ignore this folder for now
 
-### Gas Snapshots
+## Deploying the smart contract on the local network
 
-```shell
-$ forge snapshot
-```
+In order to test and interact with the smart contract we need to deploy it to the local network. Foundry provides us with the local network
+which is called _ANVIL_ which is the virtual environment in the shell
 
-### Anvil
+1. Fake accounts and Fake private keys
+2. RPC URL is also provided
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### Need to setup the metamask for the local blockchain therefore we can deploy there
