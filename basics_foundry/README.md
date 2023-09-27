@@ -38,3 +38,27 @@ which is called _ANVIL_ which is the virtual environment in the shell
 2. RPC URL is also provided
 
 ### Need to setup the metamask for the local blockchain therefore we can deploy there
+
+1. Anvil have the private keys for the accounts with some fake ethers
+2. Import the private keys to the metamask in the accounts section
+3. By this way , we can have the local account to the metamask
+
+### Adding any EVM Chain to the Metamask
+
+1. Metamask comes with some famous EVM chains
+2. If metamask doesnt it , follow the steps below
+
+- RPC URL or the end point that we would need to send transaction to the blockchain -> That is we need a connection to the node in order
+  to send a transaction to it
+- We can send transactions to our node and the client that we have to use it _go-ethereum_
+
+### Deploying the smart contract to the local network - II
+
+#### METHOD 1 : Using Command line ( Need to Add the private key )
+
+```bash
+forge --help
+forge create SimpleStorage --interactive
+```
+
+#### METHOD 2 : Using Scripting , Scripts are written in solidity
